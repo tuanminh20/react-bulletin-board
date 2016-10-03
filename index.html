@@ -12,37 +12,41 @@
   <div id="react-container"></div>
   <script type="text/babel">
     /* Create React component as stateless functional component */
+    /*
     const MyComponent = () => {
       return <div>
           <h1>Hello World</h1>
           <p>This is my first React component</p>
         </div>
     }
+    */
 
-    /* Create React component with ES6
+    /* Create React component with ES6 */
+    /*
     class MyComponent extends React.Component {
       render() {
         return <div>
-            <h1>Hello World</h1>
+            <h1>{this.props.text}</h1>
             <p>This is my first React component</p>
           </div>
       }
     }
     */
 
-    /*
     var MyComponent = React.createClass({
       render() {
         return <div>
-          <h1>Hello World</h1>
-          <p>This is my first React component</p>
+          <h1>{this.props.text}</h1>
+          <p>{this.props.children}</p>
         </div>
       }
     })
-    */
 
-    ReactDOM.render(<MyComponent />,
-      document.getElementById('react-container'))
+    ReactDOM.render(<div>
+        <MyComponent text='Hello World'>Msg 1</MyComponent>
+        <MyComponent text='Hello Ocean'>Msg 2</MyComponent>
+        <MyComponent text='Hello Planet'>Msg 3</MyComponent>
+      </div>, document.getElementById('react-container'))
   </script>
 </body>
 
